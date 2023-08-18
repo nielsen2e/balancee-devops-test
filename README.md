@@ -2,6 +2,7 @@
 This repository contains Terraform scripts to set up an AWS environment for a basic python web application.
 
 ## Github Repository Structure
+```
 .
 ├── modules
 │   ├── subnet
@@ -19,7 +20,7 @@ This repository contains Terraform scripts to set up an AWS environment for a ba
 ├── outputs.tf
 ├── README.md
 └── variables.tf
-
+```
 ### Modules:
 Modules in Terraform are used to encapsulate a group of resources and can be reused across different environments or AWS accounts. Here, there are two modules: subnet and webserver.
 
