@@ -18,14 +18,10 @@ module "myapp-subnet" {
     default_route_table_id = aws_vpc.myapp-vpc.default_route_table_id
 }
 
-module "security_groups" {
-  source        = "./modules/security-groups"
-  vpc_id        = module.vpc.vpc_id
-  my_ip = var.my_ip
-}
-
 module "myapp-server" {
     source = "./modules/webserver"
+    vpc_id        = aws_vpc.myapp-vpc.id
+    my_ip      = var.my_ip
     env_prefix = var.env_prefix
     image_name = var.image_name
     public_key_location = var.public_key_location
