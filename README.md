@@ -60,8 +60,7 @@ The presence of an `entry-script.sh` suggests an intention to automate and strea
 The split between the main files and the module-specific files allows for a clean and organized codebase, which becomes especially beneficial as the infrastructure grows and becomes more complex.
 
 ## Architecture:
-
-
+![Network Diagram](https://github.com/nielsen2e/balancee-devops-test/blob/main/balancee-archi.png)
 ## Prerequisites:
 - AWS Account
 - Terraform installed on your local machine (v0.14 or above)
