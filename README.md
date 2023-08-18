@@ -25,32 +25,32 @@ This repository contains Terraform scripts to set up an AWS environment for a ba
 Modules in Terraform are used to encapsulate a group of resources and can be reused across different environments or AWS accounts. Here, there are two modules: subnet and webserver.
 
 #### Subnet Module:
-**main.tf:** The main configuration file for the subnet module. This will define the necessary AWS resources to create subnets, within a VPC.
+**1.main.tf:** The main configuration file for the subnet module. This will define the necessary AWS resources to create subnets, within a VPC.
 
-**outputs.tf:** Defines any values that the subnet module will output once it's been applied. For instance, it could output the subnet IDs created.
+**2.outputs.tf:** Defines any values that the subnet module will output once it's been applied. For instance, it could output the subnet IDs created.
 
-**variables.tf:** Defines the variables specific to the subnet module. These could include things like the VPC ID, CIDR blocks for the subnets, availability zones, etc.
+**3.variables.tf:** Defines the variables specific to the subnet module. These could include things like the VPC ID, CIDR blocks for the subnets, availability zones, etc.
 
 #### Webserver Module:
-**main.tf:** This configuration will set up the necessary resources for the webserver, potentially including EC2 instances, security groups, and associated rules.
+**4.main.tf:** This configuration will set up the necessary resources for the webserver, potentially including EC2 instances, security groups, and associated rules.
 
-**outputs.tf:** Outputs specific to the webserver module. For instance, it could output the public IPs of the created EC2 instances.
+**5.outputs.tf:** Outputs specific to the webserver module. For instance, it could output the public IPs of the created EC2 instances.
 
-**variables.tf:** Variables specific to the webserver module. These could include instance type, AMI ID, number of instances, etc.
+**6.variables.tf:** Variables specific to the webserver module. These could include instance type, AMI ID, number of instances, etc.
 
-**.terraform.lock.hcl:** This file is used for locking the dependency versions of providers, ensuring consistent behavior and versioning. 
+**.7terraform.lock.hcl:** This file is used for locking the dependency versions of providers, ensuring consistent behavior and versioning. 
 
-**backend.tf:** This file will define the backend for Terraform. The backend determines how Terraform stores its state. Often, in a collaborative environment, this would be configured to use a remote backend like Amazon S3.
+**8.backend.tf:** This file will define the backend for Terraform. The backend determines how Terraform stores its state. Often, in a collaborative environment, this would be configured to use a remote backend like Amazon S3.
 
-**entry-script.sh:** This is a shell script for simplifying or automating certain tasks related to the Terraform setup, e.g., initializing Terraform, applying changes, and initializing application setup.
+**9.entry-script.sh:** This is a shell script for simplifying or automating certain tasks related to the Terraform setup, e.g., initializing Terraform, applying changes, and initializing application setup.
 
-**main.tf:** The primary configuration file for Terraform. This file will use modules and other resources to set up the required infrastructure.
+**10.main.tf:** The primary configuration file for Terraform. This file will use modules and other resources to set up the required infrastructure.
 
-**outputs.tf:** This file declares outputs. Outputs are like return values for Terraform modules. After running terraform apply, you can get the values of any output variables using terraform output <output_name>.
+**11.outputs.tf:** This file declares outputs. Outputs are like return values for Terraform modules. After running terraform apply, you can get the values of any output variables using terraform output <output_name>.
 
-**README.md:** A markdown file that provides information about the project, how to use it, any pre-requisites, and other necessary instructions.
+**12.README.md:** A markdown file that provides information about the project, how to use it, any pre-requisites, and other necessary instructions.
 
-**variables.tf:** This file declares all the variables that will be used in the Terraform configuration. Variables can be configured with default values or left to be set when executing Terraform commands.
+**13.variables.tf:** This file declares all the variables that will be used in the Terraform configuration. Variables can be configured with default values or left to be set when executing Terraform commands.
 
 ## Overall Design Thought Process:
 This setup indicates a design that is focused on modularization and reusability. By isolating the subnet and webserver configurations into modules, these setups can be reused in different environments or projects with minimal changes. For instance, if you wanted to replicate this in a staging and a production environment, you could do so easily by just referencing the modules with different variable values.
