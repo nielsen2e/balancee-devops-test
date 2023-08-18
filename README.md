@@ -52,7 +52,7 @@ Modules in Terraform are used to encapsulate a group of resources and can be reu
 
 **variables.tf:** This file declares all the variables that will be used in the Terraform configuration. Variables can be configured with default values or left to be set when executing Terraform commands.
 
-### Overall Design Thought Process:
+## Overall Design Thought Process:
 This setup indicates a design that is focused on modularization and reusability. By isolating the subnet and webserver configurations into modules, these setups can be reused in different environments or projects with minimal changes. For instance, if you wanted to replicate this in a staging and a production environment, you could do so easily by just referencing the modules with different variable values.
 
 The presence of an `entry-script.sh` suggests an intention to automate and streamline the process of infrastructure setup, making it even more user-friendly and reducing the possibility of human errors during setup.
